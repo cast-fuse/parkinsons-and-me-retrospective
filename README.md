@@ -36,6 +36,7 @@ We picked some technologies that we thought would help us with these:
 
 + [elixir](https://elixir-lang.org/) / [phoenix](http://phoenixframework.org/) - for the backend
 + [elm](elm-lang.org) - for the UI
++ [tachyons](http://tachyons.io/) - for the css
 
 
 ### Elixir & Phoenix
@@ -72,7 +73,7 @@ Generate JavaScript with great performance and no runtime exceptions."
 
 Elm is a typed pure functional language used for building user interfaces. We'd built a small project in elm before and really enjoyed using it.
 
-One of the biggest draws for using elm on the Parkinson's UK project was elm's type system. When refactoring, elm's compiler highlights the mistakes you've made and suggests corrections - this was extremely helpful when we needed to react to change quickly.
+The biggest draw for using elm on the Parkinson's UK project was the helpfulness of elm's type system. When refactoring, elm's compiler highlights the mistakes you've made and suggests corrections - this was extremely helpful when we needed to react to change quickly.
 
 ### Pros
 
@@ -89,6 +90,18 @@ One of the biggest draws for using elm on the Parkinson's UK project was elm's t
 we managed to introduce a very subtle bug in our logic that we didn't spot for a while, this was a reminder that even though you don't need tests that functions will handle the correct type of arguments you still need to validate your logic works properly.
 
 We would definitely use elm again on another project but only if the UI was complex enough to need it.
+
+### Tachyons
+
+> Tachyons - "Create fast loading, highly readable, and 100% responsive interfaces with as little css as possible."
+
+Tachyons is a css framework / methodology (called "functional css" or "atomic css") where each css class has a single responsibility. We used tachyons along with elm on a previous project and enjoyed how flexible it was when building user interfaces.
+
+### Pros
+
++ not having to write much css
++ altering parts of the UI did not break the UI elsewhere
++ responsive out of the box
 
 ### Managing the Project
 
