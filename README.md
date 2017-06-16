@@ -1,15 +1,15 @@
 # Parkinson's And Me Retrospective
 
-## What?
+### What?
 
 This repo is an attempt to record the useful bits of information and learning from working with Parkinson's UK on the [`Parkinson's and Me`](https://github.com/cast-fuse/parkinsons-and-me) service.
 
-## Why?
+### Why?
 
 The [main repo](https://github.com/cast-fuse/parkinsons-and-me) is a useful resource when looking at the project as a whole but it's difficult to get an idea of the specific challenges we faced when building the project and working with the charity. We hope to record some of these challenges and our thoughts on them so they may be of use to other developers or people working in tech that are working with charities.
 
 
-### The Project
+## The Project
 
 ![screen shot 2017-05-11 at 12 18 22](https://cloud.githubusercontent.com/assets/14013616/25946647/0526af6c-3644-11e7-96b4-ba6b44cea79d.png)
 
@@ -24,42 +24,104 @@ The user would answer either "Yes, this sounds like me" or "No, this doesn't sou
 
 ## The Challenges
 
-### Time and Tech
+### Technology
 
-The [Fuse Programe](http://www.wearecast.org.uk/fuse) is a fast paced 3 months where a charity really gets to grips with building a product using agile processes. In month two of us ([Andrew MacMurray](https://github.com/andrewMacmurray) and [Ivan Gonzalez](https://github.com/ivanmauricio)) were tasked with building a prototype of the service so it could be tested with users and iterated upon.
+The [Fuse Programe](http://www.wearecast.org.uk/fuse) is a fast paced 3 months where a charity really gets to grips with building a product using agile processes. In month 3, two of us ([Andrew MacMurray](https://github.com/andrewMacmurray) and [Ivan Gonzalez](https://github.com/ivanmauricio)) were tasked with building a prototype of the service so it could be tested with users and iterated upon. Our main requirements were:
 
-> We needed to act fast and be able to respond to change fast.
++ we needed to build things fast
++ we needed to be able to change things fast
++ user feedback and data was the most important out come at this stage
 
-Based on these requirements we decided to use some technologies that were new to us and relatively new in web development:
+We picked some technologies that we thought would help us with these:
 
-+ `elm` - for rendering the user UI
-+ `tachyons` - a css methodology / framework
-+ `elixir / phoenix` - for the backend
++ [elixir](https://elixir-lang.org/) / [phoenix](http://phoenixframework.org/) - for the backend
++ [elm](elm-lang.org) - for the UI
++ [tachyons](http://tachyons.io/) - for the css
 
-#### Elixir & Phoenix
 
-Working with Phoenix and Elixir was a revelation for us. Neither of us had used the language before let alone the framework. This meant a bit of trepidation going into the project. However we had heard so many positives about these technologies that we decided to put our faith in them. This really paid off!
+### Elixir & Phoenix
 
-One of the first things we noticed was how easy it was to get up and running with Phoenix. After a few simple commands we had the skeleton for a fully functioning app. This theme continued throughout the project. As when learning any new technology - there were moments where we realised that we had no idea how to build the feature we were after. Phoenix to the rescue! There were commands for generating the database models and migrations and the RESTful API we needed. Inserting mock data for testing purposes turned out to have an out of the box solution too.
+> [Elixir](https://elixir-lang.org/) - "a dynamic, functional language designed for building scalable and maintainable applications."
 
-Originally we planned to build just the user facing interface. We thought that we would have no time to build an admin interface, even though we knew this would be useful. We knew that the scoring system for generating the results was going to go through a lot of change as it had never been tested. We had resigned ourselves to inputting these changes in ourselves even though we knew this would be time consuming. We quickly realised however how easy it would be to set up this admin interface thanks to Phoenix. It was a breeze to build a fully functioning, authenticated admin dashboard where all the data that being used by the user facing app could be deleted, modified and added to. This made for a very happy Product Owner and meant that we had more time to solve higher level problems.
+> [Phoenix](http://phoenixframework.org/) - "A productive web framework that
+does not compromise speed and maintainability."
 
-In summary, Phoenix turned out to be a great choice! It was thanks to this great framework that we were able to get a lot done in a short amount of time, in fact we accomplished a lot more than we would have known if we had used technologies we already knew. It handled all the lower level problems leaving us to get on with the fun stuff! This along with amazing documentation, lots of common sense conventions and an awesome community made for very happy developers!
+Elixir and Phoenix were both new to us. Previously we'd only had experience with a few `node.js` frameworks, so we were taking a risk using a new language and framework. We'd heard good things from the community of developers we were working around and we were up for a challenge.
 
-#### Elm
+It was a risk worth taking as we became significantly more productive in a couple of days of learning than we'd been with several months of using node frameworks.
 
-Needing to be able to respond to change fast was our main motivation for using Elm for our rendering layer. We had read a few `NoRedInk` blogs that mentioned that they had had no runtime exceptions for a year. Being used to JavaScript and the dreaded `object is undefined` we thought this claim to good to be true and were eager to test it out.
+### Pros
 
-We soon came to love the safety that Elm provided. Elm's compiler became our new best friend, the best coding assistant we could hope for. Coding becomes like playing with Lego, you get immediate feedback of whether a piece (read function) you are trying to plug in somewhere fits or doesn't fit. When you are not quite sure how to wire something up you can really on types to give you a helping hand.
++ very quick to get a project up and running
++ fantastic documentation
++ code generators allow learning and productivity
++ developer experience is top notch
 
-All of this meant that as the aims of the app changed throughout the project, it was easy to us to rip the old out and put the new in with the knowledge that everything would not break. When the inevitable changes to our data structure came, we were guided around the app by the compiler with helpful messages showing us the parts that needed modifying. Having felt the pain of refactoring apps in JS before, with all the accompanying breaking changes, we were delighted with the freedom that our new toy gave us!
+### Cons
 
-Elm has turned out to be a great tool for agile development, for getting robust prototypes out the door rapidly, ready to go out into the big bad world of user testing.
++ Not that many elixir developers out there yet (might be difficult to find developers to maintain the project)
++ learning a new language and framework was a little intense!
 
-#### Tachyons
+Whilst the scarcity of elixir developers could be a problem, we felt that the productivity boost outweighed the cost and given the context of the project the data gathered would most likely be used to build an internal version of the project for Parkinson's UK that fits with their existing software architecture.
 
-The last part of our functional trifecta was Tachyons. This choice was again driven by the necessity to respond to change fast.
+Because of the productivity boost we will most likely use these technologies on fuse again.
 
-A recurring pattern in this project was ever changing designs. By the the time we finished we had gone through 4 or 5 different layouts. Using Tachyons we saved ourselves time and pain. In previous projects CSS files always found a way to become unwieldy in no time at all. Once more the accumulation of junk code became inevitable. Custom classes written for previous iterations cluttered the codebase, it becomes too much effort to check whether they are being used and taking them out without this reassurance is too risky.
+### Elm
 
-Embracing the functional CSS methodology left us with less than 100 lines of custom CSS. Going through different iterations meant that the styling was ripped out along with the HTML, meaning no unused code. 
+> Elm - "A delightful language for reliable webapps.
+Generate JavaScript with great performance and no runtime exceptions."
+
+Elm is a typed pure functional language used for building user interfaces. We'd built a small project in elm before and really enjoyed using it.
+
+The biggest draw for using elm on the Parkinson's UK project was the helpfulness of elm's type system. When refactoring, elm's compiler highlights the mistakes you've made and suggests corrections - this was extremely helpful when we needed to react to change quickly.
+
+### Pros
+
++ Fantastic documentation
++ Extremely helpful error messages
++ Easy to refactor
++ It never crashes
+
+### Cons
+
++ elm developers rare (arguably more so than elixir developers)
++ false sense of security with types (a reminder that tests are important!)
+
+we managed to introduce a very subtle bug in our logic that we didn't spot for a while, this was a reminder that even though you don't need tests that functions will handle the correct type of arguments you still need to validate your logic works properly.
+
+We would definitely use elm again on another project but only if the UI was complex enough to need it.
+
+### Tachyons
+
+> Tachyons - "Create fast loading, highly readable, and 100% responsive interfaces with as little css as possible."
+
+Tachyons is a css framework / methodology (called "functional css" or "atomic css") where each css class has a single responsibility. We used tachyons along with elm on a previous project and enjoyed how flexible it was when building user interfaces.
+
+### Pros
+
++ not having to write much css
++ altering parts of the UI did not break the UI elsewhere
++ responsive out of the box
+
+### Managing the Project
+
+We organised the project by adding each of the user stories as github issues, making technical issues from each and deciding on a two week sprint based on how long we thought each issue would take. We had a daily standup via google hangouts with our product owner where we would all feed back on where the project was up to.
+
+This was very productive at first, we had the project on continuous deployment so the product owner could see the current state of the project and the three of us worked well as a team.
+
+We ran into problems as gradually more and more Parkinson's UK stakeholders got involved with the project. The copy and designs for the app were delayed many times by 'sign off', to the point where we only had the content that would make the app work (i.e. the links to the Parkinson's UK services) on the second to last day of the project.
+
+This was a mistake on our part, we took what we thought was the spirit of agile development (reacting to change quickly and in small steps) and forgot to set clear deadlines on when content should be ready.
+
+Another mistake we made was not to loop in the wider fuse team every day where the project was up to (we were updating our team weekly). Members of the team most likely would have spotted the problems we were facing earlier and intervened.
+
+### Successes
+
++ Daily standups via Google hangouts (very useful)
++ Github issues worked well
++ Continuous deployment great for spotting problems / bugs
+
+### Mistakes
+
++ Not setting clear content deadlines
++ Not communicating with the rest of the fuse team regularly
